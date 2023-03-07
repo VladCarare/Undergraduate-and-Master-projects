@@ -1,0 +1,275 @@
+/**
+* The class defines a celestial body with mass, velocity, position, name 
+* and offers methods for retrieving this properties. It also
+* includes the Euler, Euler-Cramer and Verlat algorithms.
+* Furthermore, it associates a gravitational field with each particle
+* using the inner class GravField.
+**/
+import java.lang.Math;
+public class Particle
+{
+	private static final double G=6.67408*Math.pow(10,-11); //Gravitational Constant;
+	private PhysicsVector position = new PhysicsVector();
+    private PhysicsVector velocity = new PhysicsVector();
+	private double mass;
+	private String name = new String();
+	
+	
+	
+	
+	/**
+	*  Set Default Constructor
+	**/
+    public Particle()
+    {
+    	position = new PhysicsVector();
+        velocity = new PhysicsVector();
+	    mass=1;
+	}
+	
+	
+	
+	
+	/**
+	*  Construct a particle with velocity and mass at a certain position.
+	**/
+    public Particle(PhysicsVector position, PhysicsVector velocity,double mass)
+    {
+    	this.position.setVector(position);
+        this.velocity.setVector(velocity);
+        this.mass=mass;
+	}
+	
+	
+	
+	
+	/**
+	* Constructor that takes 8 arguments to create a particle. 
+	* @param name - the object's name
+	* @param Rx,Ry,Rz - the initial position of the object, in cartesian coordinates
+	* @param Vx,Vy,Vz - the initial velocity of the object, in cartesian coordinates
+	* @param mass - mass of the object
+	**/
+    public Particle(String name, double Rx, double Ry, double Rz, double Vx, double Vy, double Vz, double mass)
+    {
+    	this.name = name; //Example of shadowing.
+    	position.setVector(Rx,Ry,Rz);
+        velocity.setVector(Vx,Vy,Vz);
+        this.mass=mass; //Example of shadowing.
+    }
+    
+    /**
+    * @Return name of the celestial body
+    */
+    public String returnName()
+    {
+    	return name;
+    }
+    
+    /**
+    * @Return position vector of a particle with respect to the barycentre
+    */
+    public PhysicsVector returnPosition()
+    {
+    	return position;
+    }
+    
+    /**
+    * @Return position vector of a particle
+    */
+    public PhysicsVector returnVelocity()
+    {
+    	return velocity;
+    }
+    
+    /**
+    * @Return mass of a particle
+    */
+    public double returnMass()
+    {
+    	return mass;
+    }
+	
+	/**
+	* @Return the momentum of the particle.
+	**/
+	public PhysicsVector returnMomentum()
+	{
+		return PhysicsVector.scale(mass,velocity);
+	}
+	
+    
+    /**
+	*  @Return the angular momentum of the particle with respect to the barycentre
+	**/
+	public PhysicsVector returnAngularMomentum()
+	{
+		return PhysicsVector.vectorProduct(position, this.returnMomentum());
+	}
+	
+	/**
+	*  @Return the total energy of a particle
+	*  The potential energy of a celestial body is calculated with respect
+	*  to all the other celestial bodies.
+	* @param solarSystem the array of celestial bodies
+	**/
+	public double returnEnergy(Particle[] solarSystem, int i)
+	{
+		double kineticEnergy = 0,potentialEnergy = 0;
+		//recall formula for kinetic energy (m*m*v/2)
+		kineticEnergy = (mass * Math.pow(velocity.magnitude(),2)/2);
+		//introduced int i to avoid double counting
+		for( int j=i+1 ; j < solarSystem.length ; j++)
+		{
+			// making sure we don't calculate the potential energy with respect
+			// to itself
+			//recall formula for potential energy (GMm/r)
+			double numerator = (G*mass*solarSystem[j].mass);
+			double denominator = (PhysicsVector.subtract(position, solarSystem[j].position).magnitude());
+			potentialEnergy += numerator/denominator;
+			
+		}
+		return (kineticEnergy - potentialEnergy);
+	}
+	
+	
+	
+	/**
+	*  Method applies Euler formulae.
+	* @param timeStep the time step chosen by the person
+	* @param acceleration the gravitational acceleration due to all other bodies
+	**/
+	public void applyEuler(double timeStep, PhysicsVector acceleration)
+	{
+		position.increaseBy(PhysicsVector.scale(timeStep,velocity));
+		velocity.increaseBy(PhysicsVector.scale(timeStep,acceleration));
+	}	
+	
+	
+	/**
+	*  Method applies Euler-Cramer formulae.
+	* @param timeStep the time step chosen by the person
+	* @param acceleration the gravitational acceleration due to all other bodies
+	**/
+	public void applyEulerCramer(double timeStep, PhysicsVector acceleration)
+	{
+		velocity.increaseBy(PhysicsVector.scale(timeStep,acceleration));
+		position.increaseBy(PhysicsVector.scale(timeStep,velocity));
+	}	
+	
+	/**
+	*  Method applies Verlat formulae.
+	* @param timeStep the time step chosen by the person
+	* @param acceleration the gravitational acceleration due to all other bodies
+	* @param solarSystem the array of celestial bodies
+	* @param objectNumber the position of the particle within the array
+	* @param gravField the array of gravitational accelerations
+	*  The last two are needed because we need to find out the future gravitational
+	*  acceleration which needs to be computed with respect to every other object.
+	**/
+	public void applyVerlat(double timeStep, PhysicsVector acceleration, int objectNumber, 
+		Particle[] solarSystem,
+		Particle.GravField gravField[])
+	{
+		
+		position.increaseBy(PhysicsVector.scale(timeStep,velocity));
+		position.increaseBy(PhysicsVector.scale(Math.pow(timeStep,2)/2,acceleration));
+		
+		gravField[objectNumber].resetAcceleration();
+		for(int k=0; k < solarSystem.length; k++)
+			if(k!=objectNumber)
+			gravField[objectNumber].gravAcceleration(solarSystem[k]);
+		
+		acceleration.increaseBy(gravField[objectNumber].returnAcceleration());	
+		velocity.increaseBy(PhysicsVector.scale(timeStep/2,acceleration));
+	}	
+	
+	
+	/**
+	* This method applies Euler Richardson algorithm. 
+	* @param timeStep the time step chosen by the person
+	* @param acceleration the gravitational acceleration due to all other bodies
+	* @param solarSystem the array of celestial bodies
+	* @param objectNumber the position of the particle within the array
+	* @param gravField the array of gravitational accelerations
+	**/
+	public void applyEulerRichardson(double timeStep, PhysicsVector acceleration, int objectNumber, 
+		Particle[] solarSystem,
+		Particle.GravField[] gravField)
+	{
+		PhysicsVector initialPosition = new PhysicsVector(position);
+		PhysicsVector initialVelocity = new PhysicsVector(velocity);
+		PhysicsVector midPosition = new PhysicsVector();
+		PhysicsVector midVelocity = new PhysicsVector();
+		PhysicsVector midAcceleration = new PhysicsVector();
+		
+		gravField[objectNumber].resetAcceleration(); 
+		for(int k=0; k < solarSystem.length; k++)
+			if(k!=objectNumber)
+			gravField[objectNumber].gravAcceleration(solarSystem[k]);
+		
+		solarSystem[objectNumber].applyEuler(timeStep/2,gravField[objectNumber].returnAcceleration());
+		
+		midPosition.setVector(position);
+		midVelocity.setVector(velocity);
+		
+		gravField[objectNumber].resetAcceleration();
+		for(int k=0; k < solarSystem.length; k++)
+			if(k!=objectNumber)
+			gravField[objectNumber].gravAcceleration(solarSystem[k]);
+		midAcceleration.setVector(gravField[objectNumber].returnAcceleration());
+		
+		velocity.setVector(initialVelocity);
+		position.setVector(initialPosition);
+		
+		velocity.increaseBy(PhysicsVector.scale(timeStep,midAcceleration));
+		position.increaseBy(PhysicsVector.scale(timeStep,midVelocity));	
+		
+	}	
+	
+	/** 
+	* creates object which simulates the gravitational field of the Earth
+	*/
+	public class GravField
+	{
+		private PhysicsVector gravAcceleration = new PhysicsVector();
+		
+		
+		/**
+		*  Default Constructor for a Gravitational Field
+		*/
+		public GravField()
+		{
+			gravAcceleration.setVector(0,0,0);
+		}
+		
+		/**
+		*  Method acts on a particle to calculate the acceleration due to particle x.
+		*  @param x the astronomical object with reference to which the acceleration is computed.
+		**/
+		public void gravAcceleration(Particle x)
+		{
+			PhysicsVector auxiliary = new PhysicsVector();
+			auxiliary.setVector(PhysicsVector.subtract(position,x.position));
+			auxiliary.setVector(PhysicsVector.scale((-G*x.mass)/Math.pow(auxiliary.magnitude(),2),auxiliary.getUnitVector()));
+			gravAcceleration.increaseBy(auxiliary);			
+		}
+		
+		
+		/**
+		*  @Return the acceleration of the particle.
+		**/
+		public PhysicsVector returnAcceleration()
+		{
+			return gravAcceleration;
+		} 
+		
+		/**
+		*  Sets gravitational acceleration to 0.
+		**/
+		public void resetAcceleration()
+		{
+			gravAcceleration.setVector(0,0,0);
+		}
+	}
+}

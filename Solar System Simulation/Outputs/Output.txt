@@ -1,0 +1,1845 @@
+
+    You used Euler algorithm.
+
+    You used a time step of 1.0 seconds.
+
+    The results after 1.0 years is:
+
+    Intermediate interval is 1.0 days.
+
+    Initial energy(joules) is: 
+3.7402053297698066E33
+
+    Initial momentum(newtons*seconds) is: 
+-1.4665279211816737E27  -1.2883428739575935E27  4.844391786132131E25  
+
+    Initial angular momentum(joules*seconds) is:
+8.227043181298744E41  2.606982958304181E41  3.1313724041230974E43  
+
+    Initial position(metres) of the centre of mass is:
+-67505.67043889519  72522.96572152714  842.4564654413235  
+
+
+
+    Total energy(joules) is:
+3.8067824090592213E33
+
+
+
+    Total energy(joules) is:
+3.8750132003257964E33
+
+
+
+    Total energy(joules) is:
+3.945319514136368E33
+
+
+
+    Total energy(joules) is:
+4.017467408066946E33
+
+
+
+    Total energy(joules) is:
+4.090905364089903E33
+
+
+
+    Total energy(joules) is:
+4.1654654619860383E33
+
+
+
+    Total energy(joules) is:
+4.2395588583305307E33
+
+
+
+    Total energy(joules) is:
+4.3124234964537556E33
+
+
+
+    Total energy(joules) is:
+4.381997501958177E33
+
+
+
+    Total energy(joules) is:
+4.447138964786944E33
+
+
+
+    Total energy(joules) is:
+4.506023883778656E33
+
+
+
+    Total energy(joules) is:
+4.5573917437407166E33
+
+
+
+    Total energy(joules) is:
+4.601126797930989E33
+
+
+
+    Total energy(joules) is:
+4.637025748189655E33
+
+
+
+    Total energy(joules) is:
+4.6666643016128465E33
+
+
+
+    Total energy(joules) is:
+4.6909903555179637E33
+
+
+
+    Total energy(joules) is:
+4.712360680546405E33
+
+
+
+    Total energy(joules) is:
+4.7320413730769386E33
+
+
+
+    Total energy(joules) is:
+4.7515161511988205E33
+
+
+
+    Total energy(joules) is:
+4.7720248669045447E33
+
+
+
+    Total energy(joules) is:
+4.7938199713482396E33
+
+
+
+    Total energy(joules) is:
+4.817746045022295E33
+
+
+
+    Total energy(joules) is:
+4.843238160359875E33
+
+
+
+    Total energy(joules) is:
+4.870981384406559E33
+
+
+
+    Total energy(joules) is:
+4.900368022416147E33
+
+
+
+    Total energy(joules) is:
+4.9317111879563914E33
+
+
+
+    Total energy(joules) is:
+4.964994491895282E33
+
+
+
+    Total energy(joules) is:
+5.000052955942731E33
+
+
+
+    Total energy(joules) is:
+5.0372725301491406E33
+
+
+
+    Total energy(joules) is:
+5.0759004651717804E33
+
+
+
+    Total energy(joules) is:
+5.116588474860298E33
+
+
+
+    Total energy(joules) is:
+5.1584842921064246E33
+
+
+
+    Total energy(joules) is:
+5.20203836578939E33
+
+
+
+    Total energy(joules) is:
+5.246857923453717E33
+
+
+
+    Total energy(joules) is:
+5.29317211359374E33
+
+
+
+    Total energy(joules) is:
+5.341176031606349E33
+
+
+
+    Total energy(joules) is:
+5.390462170979224E33
+
+
+
+    Total energy(joules) is:
+5.441803203120865E33
+
+
+
+    Total energy(joules) is:
+5.49446518895904E33
+
+
+
+    Total energy(joules) is:
+5.549199626070653E33
+
+
+
+    Total energy(joules) is:
+5.605374389275688E33
+
+
+
+    Total energy(joules) is:
+5.66364275972303E33
+
+
+
+    Total energy(joules) is:
+5.723845297241941E33
+
+
+
+    Total energy(joules) is:
+5.785962134865838E33
+
+
+
+    Total energy(joules) is:
+5.850448712021899E33
+
+
+
+    Total energy(joules) is:
+5.916724068628792E33
+
+
+
+    Total energy(joules) is:
+5.985408979839376E33
+
+
+
+    Total energy(joules) is:
+6.055493063399586E33
+
+
+
+    Total energy(joules) is:
+6.127422840252322E33
+
+
+
+    Total energy(joules) is:
+6.200091668645138E33
+
+
+
+    Total energy(joules) is:
+6.272966638745794E33
+
+
+
+    Total energy(joules) is:
+6.344804128064876E33
+
+
+
+    Total energy(joules) is:
+6.413827000548335E33
+
+
+
+    Total energy(joules) is:
+6.478783491839846E33
+
+
+
+    Total energy(joules) is:
+6.537178048007193E33
+
+
+
+    Total energy(joules) is:
+6.588565723982977E33
+
+
+
+    Total energy(joules) is:
+6.631647280005321E33
+
+
+
+    Total energy(joules) is:
+6.667498668810385E33
+
+
+
+    Total energy(joules) is:
+6.696806477644878E33
+
+
+
+    Total energy(joules) is:
+6.721484711879096E33
+
+
+
+    Total energy(joules) is:
+6.743429847071458E33
+
+
+
+    Total energy(joules) is:
+6.76373677144399E33
+
+
+
+    Total energy(joules) is:
+6.784376946777499E33
+
+
+
+    Total energy(joules) is:
+6.8054129353463E33
+
+
+
+    Total energy(joules) is:
+6.828365657999345E33
+
+
+
+    Total energy(joules) is:
+6.852713150832042E33
+
+
+
+    Total energy(joules) is:
+6.879439660150937E33
+
+
+
+    Total energy(joules) is:
+6.908142562474016E33
+
+
+
+    Total energy(joules) is:
+6.938914868349263E33
+
+
+
+    Total energy(joules) is:
+6.971873022426456E33
+
+
+
+    Total energy(joules) is:
+7.006401889148316E33
+
+
+
+    Total energy(joules) is:
+7.043150393143455E33
+
+
+
+    Total energy(joules) is:
+7.08105308961569E33
+
+
+
+    Total energy(joules) is:
+7.121107241029449E33
+
+
+
+    Total energy(joules) is:
+7.162342146525838E33
+
+
+
+    Total energy(joules) is:
+7.205493781229601E33
+
+
+
+    Total energy(joules) is:
+7.249994239872932E33
+
+
+
+    Total energy(joules) is:
+7.295995670972861E33
+
+
+
+    Total energy(joules) is:
+7.343685519637188E33
+
+
+
+    Total energy(joules) is:
+7.39244485450411E33
+
+
+
+    Total energy(joules) is:
+7.443135731818644E33
+
+
+
+    Total energy(joules) is:
+7.494822878801822E33
+
+
+
+    Total energy(joules) is:
+7.548705085834537E33
+
+
+
+    Total energy(joules) is:
+7.603700033502254E33
+
+
+
+    Total energy(joules) is:
+7.660812481531926E33
+
+
+
+    Total energy(joules) is:
+7.719494524851126E33
+
+
+
+    Total energy(joules) is:
+7.780021058416571E33
+
+
+
+    Total energy(joules) is:
+7.842536291828023E33
+
+
+
+    Total energy(joules) is:
+7.906656241318301E33
+
+
+
+    Total energy(joules) is:
+7.973285533935011E33
+
+
+
+    Total energy(joules) is:
+8.041246440379148E33
+
+
+
+    Total energy(joules) is:
+8.111629238091077E33
+
+
+
+    Total energy(joules) is:
+8.182852196713131E33
+
+
+
+    Total energy(joules) is:
+8.255407228534408E33
+
+
+
+    Total energy(joules) is:
+8.327474549074256E33
+
+
+
+    Total energy(joules) is:
+8.398335577253903E33
+
+
+
+    Total energy(joules) is:
+8.466369367034137E33
+
+
+
+    Total energy(joules) is:
+8.529539350038199E33
+
+
+
+    Total energy(joules) is:
+8.586930968749847E33
+
+
+
+    Total energy(joules) is:
+8.636273667837693E33
+
+
+
+    Total energy(joules) is:
+8.678392186864675E33
+
+
+
+    Total energy(joules) is:
+8.712215443782912E33
+
+
+
+    Total energy(joules) is:
+8.740227911570457E33
+
+
+
+    Total energy(joules) is:
+8.762912946854986E33
+
+
+
+    Total energy(joules) is:
+8.782913617576775E33
+
+
+
+    Total energy(joules) is:
+8.801341049263823E33
+
+
+
+    Total energy(joules) is:
+8.819562614434096E33
+
+
+
+    Total energy(joules) is:
+8.838983853109611E33
+
+
+
+    Total energy(joules) is:
+8.859279668732881E33
+
+
+
+    Total energy(joules) is:
+8.88197731520443E33
+
+
+
+    Total energy(joules) is:
+8.905827394164116E33
+
+
+
+    Total energy(joules) is:
+8.932426249972748E33
+
+
+
+    Total energy(joules) is:
+8.960254873650038E33
+
+
+
+    Total energy(joules) is:
+8.990647120964119E33
+
+
+
+    Total energy(joules) is:
+9.022635118181715E33
+
+
+
+    Total energy(joules) is:
+9.056659664340917E33
+
+
+
+    Total energy(joules) is:
+9.092528370986362E33
+
+
+
+    Total energy(joules) is:
+9.129723493275866E33
+
+
+
+    Total energy(joules) is:
+9.169048658355025E33
+
+
+
+    Total energy(joules) is:
+9.209134235449484E33
+
+
+
+    Total energy(joules) is:
+9.251520427734762E33
+
+
+
+    Total energy(joules) is:
+9.294599824596993E33
+
+
+
+    Total energy(joules) is:
+9.340094218798603E33
+
+
+
+    Total energy(joules) is:
+9.386487700174233E33
+
+
+
+    Total energy(joules) is:
+9.434958270670711E33
+
+
+
+    Total energy(joules) is:
+9.484767043927277E33
+
+
+
+    Total energy(joules) is:
+9.536197909606676E33
+
+
+
+    Total energy(joules) is:
+9.589471556904397E33
+
+
+
+    Total energy(joules) is:
+9.644008045610832E33
+
+
+
+    Total energy(joules) is:
+9.701172511087672E33
+
+
+
+    Total energy(joules) is:
+9.759539906859008E33
+
+
+
+    Total energy(joules) is:
+9.820903360924651E33
+
+
+
+    Total energy(joules) is:
+9.883547372527256E33
+
+
+
+    Total energy(joules) is:
+9.949160898897045E33
+
+
+
+    Total energy(joules) is:
+1.0016076640222361E34
+
+
+
+    Total energy(joules) is:
+1.0085259277796908E34
+
+
+
+    Total energy(joules) is:
+1.0155746477647104E34
+
+
+
+    Total energy(joules) is:
+1.0227163969713154E34
+
+
+
+    Total energy(joules) is:
+1.0298997595160911E34
+
+
+
+    Total energy(joules) is:
+1.0369183503098571E34
+
+
+
+    Total energy(joules) is:
+1.0437425148364572E34
+
+
+
+    Total energy(joules) is:
+1.050028414291052E34
+
+
+
+    Total energy(joules) is:
+1.0557826647330703E34
+
+
+
+    Total energy(joules) is:
+1.0606982721410392E34
+
+
+
+    Total energy(joules) is:
+1.064908512586617E34
+
+
+
+    Total energy(joules) is:
+1.0683100162177574E34
+
+
+
+    Total energy(joules) is:
+1.07113972334075E34
+
+
+
+    Total energy(joules) is:
+1.0734964754339659E34
+
+
+
+    Total energy(joules) is:
+1.0755727273946262E34
+
+
+
+    Total energy(joules) is:
+1.0775467274848745E34
+
+
+
+    Total energy(joules) is:
+1.0794591481100538E34
+
+
+
+    Total energy(joules) is:
+1.0815241294243685E34
+
+
+
+    Total energy(joules) is:
+1.0836481150036543E34
+
+
+
+    Total energy(joules) is:
+1.0860469140092462E34
+
+
+
+    Total energy(joules) is:
+1.0885671526597228E34
+
+
+
+    Total energy(joules) is:
+1.0913917265888912E34
+
+
+
+    Total energy(joules) is:
+1.094359174799582E34
+
+
+
+    Total energy(joules) is:
+1.097579364495309E34
+
+
+
+    Total energy(joules) is:
+1.1009596678033276E34
+
+
+
+    Total energy(joules) is:
+1.104519962825496E34
+
+
+
+    Total energy(joules) is:
+1.1082661338575785E34
+
+
+
+    Total energy(joules) is:
+1.1121399586250729E34
+
+
+
+    Total energy(joules) is:
+1.1162420873859975E34
+
+
+
+    Total energy(joules) is:
+1.1204326773183203E34
+
+
+
+    Total energy(joules) is:
+1.1248634566417298E34
+
+
+
+    Total energy(joules) is:
+1.1293570227296768E34
+
+
+
+    Total energy(joules) is:
+1.1340710347717817E34
+
+
+
+    Total energy(joules) is:
+1.1388481507747996E34
+
+
+
+    Total energy(joules) is:
+1.143818698484942E34
+
+
+
+    Total energy(joules) is:
+1.148900454031782E34
+
+
+
+    Total energy(joules) is:
+1.154159968085549E34
+
+
+
+    Total energy(joules) is:
+1.1595922383164702E34
+
+
+
+    Total energy(joules) is:
+1.1651693828854907E34
+
+
+
+    Total energy(joules) is:
+1.1709679792239162E34
+
+
+
+    Total energy(joules) is:
+1.176880392143058E34
+
+
+
+    Total energy(joules) is:
+1.1830379252207254E34
+
+
+
+    Total energy(joules) is:
+1.1893019707643379E34
+
+
+
+    Total energy(joules) is:
+1.1958328877343165E34
+
+
+
+    Total energy(joules) is:
+1.202482707583289E34
+
+
+
+    Total energy(joules) is:
+1.2093663457102226E34
+
+
+
+    Total energy(joules) is:
+1.2163434042577987E34
+
+
+
+    Total energy(joules) is:
+1.2234182149643828E34
+
+
+
+    Total energy(joules) is:
+1.2304563386805505E34
+
+
+
+    Total energy(joules) is:
+1.237322800262903E34
+
+
+
+    Total energy(joules) is:
+1.243903166145519E34
+
+
+
+    Total energy(joules) is:
+1.249951051752233E34
+
+
+
+    Total energy(joules) is:
+1.2554143775416699E34
+
+
+
+    Total energy(joules) is:
+1.2600480615653727E34
+
+
+
+    Total energy(joules) is:
+1.263943679495606E34
+
+
+
+    Total energy(joules) is:
+1.266999836365237E34
+
+
+
+    Total energy(joules) is:
+1.2694586224666194E34
+
+
+
+    Total energy(joules) is:
+1.2713626731511824E34
+
+
+
+    Total energy(joules) is:
+1.2729751838617043E34
+
+
+
+    Total energy(joules) is:
+1.2744040791210822E34
+
+
+
+    Total energy(joules) is:
+1.2758008872096776E34
+
+
+
+    Total energy(joules) is:
+1.2772763294669416E34
+
+
+
+    Total energy(joules) is:
+1.2788397508048376E34
+
+
+
+    Total energy(joules) is:
+1.2806055033697344E34
+
+
+
+    Total energy(joules) is:
+1.282474470401245E34
+
+
+
+    Total energy(joules) is:
+1.2845741076632307E34
+
+
+
+    Total energy(joules) is:
+1.2867654041956862E34
+
+
+
+    Total energy(joules) is:
+1.289188063625988E34
+
+
+
+    Total energy(joules) is:
+1.2917086670976672E34
+
+
+
+    Total energy(joules) is:
+1.294436211938466E34
+
+
+
+    Total energy(joules) is:
+1.2972738025948334E34
+
+
+
+    Total energy(joules) is:
+1.3002707714756432E34
+
+
+
+    Total energy(joules) is:
+1.3033865832381887E34
+
+
+
+    Total energy(joules) is:
+1.3065978917142233E34
+
+
+
+    Total energy(joules) is:
+1.3099540017931702E34
+
+
+
+    Total energy(joules) is:
+1.3133749395247265E34
+
+
+
+    Total energy(joules) is:
+1.3169736032129741E34
+
+
+
+    Total energy(joules) is:
+1.320623791262846E34
+
+
+
+    Total energy(joules) is:
+1.324479150049739E34
+
+
+
+    Total energy(joules) is:
+1.3283817418801046E34
+
+
+
+    Total energy(joules) is:
+1.3324832461109216E34
+
+
+
+    Total energy(joules) is:
+1.336648718190131E34
+
+
+
+    Total energy(joules) is:
+1.3410074368254034E34
+
+
+
+    Total energy(joules) is:
+1.3454760677695618E34
+
+
+
+    Total energy(joules) is:
+1.3501305093931154E34
+
+
+
+    Total energy(joules) is:
+1.354960783832758E34
+
+
+
+    Total energy(joules) is:
+1.3599559538787662E34
+
+
+
+    Total energy(joules) is:
+1.3651682372816543E34
+
+
+
+    Total energy(joules) is:
+1.3704990789005712E34
+
+
+
+    Total energy(joules) is:
+1.3760478286966457E34
+
+
+
+    Total energy(joules) is:
+1.3816335239953075E34
+
+
+
+    Total energy(joules) is:
+1.387360275680069E34
+
+
+
+    Total energy(joules) is:
+1.3929706722478936E34
+
+
+
+    Total energy(joules) is:
+1.398516897213917E34
+
+
+
+    Total energy(joules) is:
+1.4036791218948903E34
+
+
+
+    Total energy(joules) is:
+1.408424879522589E34
+
+
+
+    Total energy(joules) is:
+1.4124685913659035E34
+
+
+
+    Total energy(joules) is:
+1.41577820488991E34
+
+
+
+    Total energy(joules) is:
+1.4182521111954003E34
+
+
+
+    Total energy(joules) is:
+1.4199581875997083E34
+
+
+
+    Total energy(joules) is:
+1.4210450929633173E34
+
+
+
+    Total energy(joules) is:
+1.4216237323353609E34
+
+
+
+    Total energy(joules) is:
+1.4219583107903573E34
+
+
+
+    Total energy(joules) is:
+1.4220878518082348E34
+
+
+
+    Total energy(joules) is:
+1.4222777849030186E34
+
+
+
+    Total energy(joules) is:
+1.422456002023617E34
+
+
+
+    Total energy(joules) is:
+1.4228519425251514E34
+
+
+
+    Total energy(joules) is:
+1.4233422990873597E34
+
+
+
+    Total energy(joules) is:
+1.4241050496648808E34
+
+
+
+    Total energy(joules) is:
+1.4250055022846475E34
+
+
+
+    Total energy(joules) is:
+1.4261631057472559E34
+
+
+
+    Total energy(joules) is:
+1.427479061817416E34
+
+
+
+    Total energy(joules) is:
+1.4290018352583973E34
+
+
+
+    Total energy(joules) is:
+1.4306958291350998E34
+
+
+
+    Total energy(joules) is:
+1.4325446183644594E34
+
+
+
+    Total energy(joules) is:
+1.4345856737624047E34
+
+
+
+    Total energy(joules) is:
+1.4367455518793956E34
+
+
+
+    Total energy(joules) is:
+1.43912026055936E34
+
+
+
+    Total energy(joules) is:
+1.441586250951901E34
+
+
+
+    Total energy(joules) is:
+1.4442786892743306E34
+
+
+
+    Total energy(joules) is:
+1.4470478938516596E34
+
+
+
+    Total energy(joules) is:
+1.4500384872286945E34
+
+
+
+    Total energy(joules) is:
+1.4531180236834134E34
+
+
+
+    Total energy(joules) is:
+1.4564240230998407E34
+
+
+
+    Total energy(joules) is:
+1.4598513159574866E34
+
+
+
+    Total energy(joules) is:
+1.4634942895290672E34
+
+
+
+    Total energy(joules) is:
+1.4673007345797085E34
+
+
+
+    Total energy(joules) is:
+1.4713027176517857E34
+
+
+
+    Total energy(joules) is:
+1.475509665855061E34
+
+
+
+    Total energy(joules) is:
+1.4798935565055109E34
+
+
+
+    Total energy(joules) is:
+1.484522008001388E34
+
+
+
+    Total energy(joules) is:
+1.4893094907148536E34
+
+
+
+    Total energy(joules) is:
+1.4943692496115926E34
+
+
+
+    Total energy(joules) is:
+1.4995519936660274E34
+
+
+
+    Total energy(joules) is:
+1.5049621905602016E34
+
+
+
+    Total energy(joules) is:
+1.5103920724871357E34
+
+
+
+    Total energy(joules) is:
+1.5158934999313915E34
+
+
+
+    Total energy(joules) is:
+1.5211992453928185E34
+
+
+
+    Total energy(joules) is:
+1.5262829574268247E34
+
+
+
+    Total energy(joules) is:
+1.530868867868038E34
+
+
+
+    Total energy(joules) is:
+1.5348736051581822E34
+
+
+
+    Total energy(joules) is:
+1.5381218699835472E34
+
+
+
+    Total energy(joules) is:
+1.5405924128119818E34
+
+
+
+    Total energy(joules) is:
+1.5423342527359788E34
+
+
+
+    Total energy(joules) is:
+1.5434229371936582E34
+
+
+
+    Total energy(joules) is:
+1.5440891247461021E34
+
+
+
+    Total energy(joules) is:
+1.544412844729995E34
+
+
+
+    Total energy(joules) is:
+1.5446817712910834E34
+
+
+
+    Total energy(joules) is:
+1.5448830370522505E34
+
+
+
+    Total energy(joules) is:
+1.5452623101481084E34
+
+
+
+    Total energy(joules) is:
+1.54571022039096E34
+
+
+
+    Total energy(joules) is:
+1.546432580176453E34
+
+
+
+    Total energy(joules) is:
+1.5472749102604585E34
+
+
+
+    Total energy(joules) is:
+1.5483969578707237E34
+
+
+
+    Total energy(joules) is:
+1.5496571712444753E34
+
+
+
+    Total energy(joules) is:
+1.5511780089591332E34
+
+
+
+    Total energy(joules) is:
+1.5528481980098854E34
+
+
+
+    Total energy(joules) is:
+1.5547312477193115E34
+
+
+
+    Total energy(joules) is:
+1.556773235333554E34
+
+
+
+    Total energy(joules) is:
+1.55897236653022E34
+
+
+
+    Total energy(joules) is:
+1.5613360145946117E34
+
+
+
+    Total energy(joules) is:
+1.5638166642946548E34
+
+
+
+    Total energy(joules) is:
+1.5664896959513413E34
+
+
+
+    Total energy(joules) is:
+1.5692582779323448E34
+
+
+
+    Total energy(joules) is:
+1.5722454104802652E34
+
+
+
+    Total energy(joules) is:
+1.5753145276982735E34
+
+
+
+    Total energy(joules) is:
+1.5786114904023376E34
+
+
+
+    Total energy(joules) is:
+1.5819741603743534E34
+
+
+
+    Total energy(joules) is:
+1.5855556420588802E34
+
+
+
+    Total energy(joules) is:
+1.5892070718325047E34
+
+
+
+    Total energy(joules) is:
+1.593083445184762E34
+
+
+
+    Total energy(joules) is:
+1.5970713308999837E34
+
+
+
+    Total energy(joules) is:
+1.6012929607713435E34
+
+
+
+    Total energy(joules) is:
+1.6056709906867378E34
+
+
+
+    Total energy(joules) is:
+1.610275800807819E34
+
+
+
+    Total energy(joules) is:
+1.6150623957320262E34
+
+
+
+    Total energy(joules) is:
+1.6200283165631906E34
+
+
+
+    Total energy(joules) is:
+1.625169806513552E34
+
+
+
+    Total energy(joules) is:
+1.6304068741498405E34
+
+
+
+    Total energy(joules) is:
+1.635751879071297E34
+
+
+
+    Total energy(joules) is:
+1.6410221315880282E34
+
+
+
+    Total energy(joules) is:
+1.6462005037309297E34
+
+
+
+    Total energy(joules) is:
+1.6509997925114662E34
+
+
+
+    Total energy(joules) is:
+1.655383081608197E34
+
+
+
+    Total energy(joules) is:
+1.6590363035571476E34
+
+
+
+    Total energy(joules) is:
+1.6619880291941713E34
+
+
+
+    Total energy(joules) is:
+1.664057781398813E34
+
+
+
+    Total energy(joules) is:
+1.6654411278596085E34
+
+
+
+    Total energy(joules) is:
+1.6661272482288074E34
+
+
+
+    Total energy(joules) is:
+1.6663921568674202E34
+
+
+
+    Total energy(joules) is:
+1.666311590633703E34
+
+
+
+    Total energy(joules) is:
+1.6661069313156552E34
+
+
+
+    Total energy(joules) is:
+1.6658447143171954E34
+
+
+
+    Total energy(joules) is:
+1.665640221607627E34
+
+
+
+    Total energy(joules) is:
+1.6655667660731307E34
+
+
+
+    Total energy(joules) is:
+1.665640708273904E34
+
+
+
+    Total energy(joules) is:
+1.6659404344881268E34
+
+
+
+    Total energy(joules) is:
+1.6663926507989386E34
+
+
+
+    Total energy(joules) is:
+1.667094111277567E34
+
+
+
+    Total energy(joules) is:
+1.6679070133616025E34
+
+
+
+    Total energy(joules) is:
+1.6689483061747053E34
+
+
+
+    Total energy(joules) is:
+1.6700518960457012E34
+
+
+
+    Total energy(joules) is:
+1.67138110234528E34
+
+
+
+    Total energy(joules) is:
+1.6727725331445843E34
+
+
+
+    Total energy(joules) is:
+1.6743965289651687E34
+
+
+
+    Total energy(joules) is:
+1.676087994326425E34
+
+
+
+    Total energy(joules) is:
+1.6780064896422613E34
+
+
+
+    Total energy(joules) is:
+1.6799894748641289E34
+
+
+
+    Total energy(joules) is:
+1.682156279545123E34
+
+
+
+    Total energy(joules) is:
+1.684386833758743E34
+
+
+
+    Total energy(joules) is:
+1.6867803329492806E34
+
+
+
+    Total energy(joules) is:
+1.6892719345491922E34
+
+
+
+    Total energy(joules) is:
+1.6919270317129116E34
+
+
+
+    Total energy(joules) is:
+1.694736802341199E34
+
+
+
+    Total energy(joules) is:
+1.697712460492756E34
+
+
+
+    Total energy(joules) is:
+1.700879138286694E34
+
+
+
+    Total energy(joules) is:
+1.7041920259229754E34
+
+
+
+    Total energy(joules) is:
+1.707718495593293E34
+
+
+
+    Total energy(joules) is:
+1.7113741193212916E34
+
+
+
+    Total energy(joules) is:
+1.7152673128550985E34
+
+
+
+    Total energy(joules) is:
+1.7192778031665507E34
+
+
+
+    Total energy(joules) is:
+1.7235270995424315E34
+
+
+
+    Total energy(joules) is:
+1.7278433090809455E34
+
+
+
+    Total energy(joules) is:
+1.7323091187043534E34
+
+
+
+    Total energy(joules) is:
+1.736678609446724E34
+
+
+
+    Total energy(joules) is:
+1.7409677405398354E34
+
+
+
+    Total energy(joules) is:
+1.7448711190140178E34
+
+
+
+    Total energy(joules) is:
+1.7483472565498318E34
+
+
+
+    Total energy(joules) is:
+1.7511160138633631E34
+
+
+
+    Total energy(joules) is:
+1.7531720721703186E34
+
+
+
+    Total energy(joules) is:
+1.754386754190952E34

@@ -1,0 +1,30 @@
+
+    You used Euler-Cramer algorithm.
+
+    You used a time step of 1.0E-4 seconds.
+
+    The results after 62.8318531 seconds is:
+
+    Intermediate interval is 6.28318531 seconds.
+
+    Initial energy(joules) is: 
+-5.000000000000001E-10
+
+    Initial momentum(newtons*seconds) is: 
+9.999999999999999E-11  0.0  0.0  
+
+    Initial angular momentum(joules*seconds) is:
+0.0  0.0  -9.999999999999999E-10  
+
+    Initial position(metres) of the centre of mass is:
+0.0  9.999999999999899E-14  0.0  
+7.332385365543814E-8%
+1.466420407325586E-7%
+2.1996436672111486E-7%
+2.932823051082778E-7%
+3.6659248081605256E-7%
+4.3990834086571335E-7%
+5.132265989971074E-7%
+5.865566343743467E-7%
+6.598786406186719E-7%
+7.331956197731415E-7%

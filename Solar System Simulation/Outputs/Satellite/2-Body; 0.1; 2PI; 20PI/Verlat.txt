@@ -1,0 +1,30 @@
+
+    You used Verlat algorithm.
+
+    You used a time step of 0.1 seconds.
+
+    The results after 62.8318531 seconds is:
+
+    Intermediate interval is 6.28318531 seconds.
+
+    Initial energy(joules) is: 
+-5.000000000000001E-10
+
+    Initial momentum(newtons*seconds) is: 
+9.999999999999999E-11  0.0  0.0  
+
+    Initial angular momentum(joules*seconds) is:
+0.0  0.0  -9.999999999999999E-10  
+
+    Initial position(metres) of the centre of mass is:
+0.0  9.999999999999899E-14  0.0  
+-8847.80508824011%
+-39340.204628966356%
+-69832.56611436952%
+-100324.91866890683%
+-130817.26711567503%
+-161309.61319065842%
+-191801.9577191302%
+-222294.30115880567%
+-252786.6437901509%
+-283278.9857975254%

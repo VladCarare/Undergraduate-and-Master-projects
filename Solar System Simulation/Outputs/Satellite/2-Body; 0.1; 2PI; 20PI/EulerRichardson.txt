@@ -1,0 +1,30 @@
+
+    You used Euler-Richardson algorithm.
+
+    You used a time step of 0.1 seconds.
+
+    The results after 62.8318531 seconds is:
+
+    Intermediate interval is 6.28318531 seconds.
+
+    Initial energy(joules) is: 
+-5.000000000000001E-10
+
+    Initial momentum(newtons*seconds) is: 
+9.999999999999999E-11  0.0  0.0  
+
+    Initial angular momentum(joules*seconds) is:
+0.0  0.0  -9.999999999999999E-10  
+
+    Initial position(metres) of the centre of mass is:
+0.0  9.999999999999899E-14  0.0  
+-0.07213471848878328%
+-0.14446403149028342%
+-0.21674699513424045%
+-0.28879578847080367%
+-0.360476863704875%
+-0.43171179540097526%
+-0.5024780698134279%
+-0.5728099547766341%
+-0.642799490288084%
+-0.7125975399674189%

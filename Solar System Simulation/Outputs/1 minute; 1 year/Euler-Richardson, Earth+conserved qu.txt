@@ -1,0 +1,331 @@
+
+    You used Euler-Richardson algorithm.
+
+    You used a time step of 1.0 minutes
+
+    The results after 1.0 years is:
+
+    Initial energy(joules) is: 
+-5.980751935640562E35
+
+    Initial momentum(newtons*seconds) is: 
+-1.4665279211816737E27  -1.2883428739575935E27  4.844391786132131E25  
+
+    Initial angular momentum(joules*seconds) is:
+8.227043181298744E41  2.606982958304181E41  3.1313724041230974E43  
+
+    Initial position(metres) of the centre of mass is:
+-67505.67043889519  72522.96572152714  842.4564654413235  
+
+
+
+    Total energy(joules) is:
+-5.9900160366516055E35
+
+    Total momentum(newtons*seconds) is:
+-1.467753369491955E27  -1.289383370034767E27  4.830172433349442E25  
+
+    Total angular momentum(joules*seconds) is:
+8.22704354259236E41  2.6069837118800547E41  3.1313722806787253E43  
+
+    The centre of mass has moved(metres) by:
+99189.56948356591
+
+    Result format is:
+    x  y  z
+    Vx  Vy  Vz
+    Results are quoted in KM and KM/S.
+
+-3.57956462611171E7  1.438091038916432E8  22285.293486999442  
+-29.444840427291858  -7.174407393856318  -6.363643420568771E-4  
+
+
+
+
+    Total energy(joules) is:
+-5.994110833411047E35
+
+    Total momentum(newtons*seconds) is:
+-1.4691630213048096E27  -1.2904098349333822E27  4.838241307407765E25  
+
+    Total angular momentum(joules*seconds) is:
+8.227043452263094E41  2.6069839637377495E41  3.131372181353336E43  
+
+    The centre of mass has moved(metres) by:
+99363.06150340014
+
+    Result format is:
+    x  y  z
+    Vx  Vy  Vz
+    Results are quoted in KM and KM/S.
+
+-1.0382701764705084E8  1.0651385572587207E8  22506.879968226258  
+-21.849375826707067  -20.903670530248917  -9.096448834685344E-5  
+
+
+
+
+    Total energy(joules) is:
+-6.001852874863366E35
+
+    Total momentum(newtons*seconds) is:
+-1.4720834005320947E27  -1.290824370519817E27  4.849579703259217E25  
+
+    Total angular momentum(joules*seconds) is:
+8.227042909150323E41  2.6069836015435762E41  3.131372093208158E43  
+
+    The centre of mass has moved(metres) by:
+99603.12228934497
+
+    Result format is:
+    x  y  z
+    Vx  Vy  Vz
+    Results are quoted in KM and KM/S.
+
+-1.4395978356127378E8  4.0502743563606665E7  22736.619278889684  
+-8.466613165447068  -28.834855804118433  6.722490098770665E-4  
+
+
+
+
+    Total energy(joules) is:
+-6.0105635252648654E35
+
+    Total momentum(newtons*seconds) is:
+-1.473054149486208E27  -1.2922998808738713E27  4.843995483776041E25  
+
+    Total angular momentum(joules*seconds) is:
+8.227042285793927E41  2.606982940892869E41  3.13137204048526E43  
+
+    The centre of mass has moved(metres) by:
+99907.62866207035
+
+    Result format is:
+    x  y  z
+    Vx  Vy  Vz
+    Results are quoted in KM and KM/S.
+
+-1.4597875803474998E8  -3.615915385167631E7  23126.669410646984  
+6.865101650156508  -28.999495147836832  0.0012322923597509843  
+
+
+
+
+    Total energy(joules) is:
+-6.014974581440173E35
+
+    Total momentum(newtons*seconds) is:
+-1.4735785653055E27  -1.289971772668126E27  4.858910363292639E25  
+
+    Total angular momentum(joules*seconds) is:
+8.227041647954665E41  2.6069819908879542E41  3.131372138436919E43  
+
+    The centre of mass has moved(metres) by:
+100275.07737404536
+
+    Result format is:
+    x  y  z
+    Vx  Vy  Vz
+    Results are quoted in KM and KM/S.
+
+-1.1022201642261697E8  -1.032726900505195E8  23716.77126279139  
+20.0631694526014  -21.69840520798299  0.0012523508456904018  
+
+
+
+
+    Total energy(joules) is:
+-6.0230774734828E35
+
+    Total momentum(newtons*seconds) is:
+-1.4742073630347168E27  -1.2894751733770156E27  4.860169298947059E25  
+
+    Total angular momentum(joules*seconds) is:
+8.227041694591275E41  2.6069817101643934E41  3.131372156425602E43  
+
+    The centre of mass has moved(metres) by:
+100705.59531709566
+
+    Result format is:
+    x  y  z
+    Vx  Vy  Vz
+    Results are quoted in KM and KM/S.
+
+-4.663883515123057E7  -1.439639954727828E8  24456.742061534558  
+27.930991599789085  -9.077927038281851  7.669162190222644E-4  
+
+
+
+
+    Total energy(joules) is:
+-6.031177439284454E35
+
+    Total momentum(newtons*seconds) is:
+-1.4717818522768103E27  -1.2891203022542407E27  4.849081923691325E25  
+
+    Total angular momentum(joules*seconds) is:
+8.227041981938768E41  2.6069816198405843E41  3.131372287846002E43  
+
+    The centre of mass has moved(metres) by:
+101198.16646964305
+
+    Result format is:
+    x  y  z
+    Vx  Vy  Vz
+    Results are quoted in KM and KM/S.
+
+2.8383419350678924E7  -1.4847483321128714E8  25281.422929767898  
+28.74459827020197  5.6490178799254025  9.700273237631936E-5  
+
+
+
+
+    Total energy(joules) is:
+-6.03543851939429E35
+
+    Total momentum(newtons*seconds) is:
+-1.4723123314766627E27  -1.2883026356143737E27  4.854725798118167E25  
+
+    Total angular momentum(joules*seconds) is:
+8.227042633064715E41  2.606982324451301E41  3.1313723167121794E43  
+
+    The centre of mass has moved(metres) by:
+101753.14654730163
+
+    Result format is:
+    x  y  z
+    Vx  Vy  Vz
+    Results are quoted in KM and KM/S.
+
+9.609120388330786E7  -1.1592107416824377E8  26150.056278260752  
+22.401220668132872  18.955850117871623  -4.3388525579530314E-4  
+
+
+
+
+    Total energy(joules) is:
+-6.0435122628965934E35
+
+    Total momentum(newtons*seconds) is:
+-1.4728339640561535E27  -1.289543395359343E27  4.860319640375889E25  
+
+    Total angular momentum(joules*seconds) is:
+8.227043098030733E41  2.6069830322286875E41  3.1313723487099326E43  
+
+    The centre of mass has moved(metres) by:
+102371.0432544294
+
+    Result format is:
+    x  y  z
+    Vx  Vy  Vz
+    Results are quoted in KM and KM/S.
+
+1.3950275899662995E8  -5.426795401422822E7  27041.219146275307  
+10.35122055142138  27.634633825977794  -6.359443836071181E-4  
+
+
+
+
+    Total energy(joules) is:
+-6.051099859788148E35
+
+    Total momentum(newtons*seconds) is:
+-1.4741934742317374E27  -1.2910076309112572E27  4.853940911248815E25  
+
+    Total angular momentum(joules*seconds) is:
+8.22704340142818E41  2.6069835930810935E41  3.131372327582722E43  
+
+    The centre of mass has moved(metres) by:
+103049.62510228585
+
+    Result format is:
+    x  y  z
+    Vx  Vy  Vz
+    Results are quoted in KM and KM/S.
+
+1.472094341658756E8  2.1261696214667525E7  27937.771216297377  
+-4.597905901268379  29.39191665334634  -4.5128659964018946E-4  
+
+
+
+
+    Total energy(joules) is:
+-6.055833933076968E35
+
+    Total momentum(newtons*seconds) is:
+-1.4764827906183337E27  -1.2941773544506413E27  4.858672172522819E25  
+
+    Total angular momentum(joules*seconds) is:
+8.227043422180245E41  2.606983991478594E41  3.131372164661224E43  
+
+    The centre of mass has moved(metres) by:
+103786.8471268887
+
+    Result format is:
+    x  y  z
+    Vx  Vy  Vz
+    Results are quoted in KM and KM/S.
+
+1.1641436040186745E8  9.135230385552306E7  28815.345950585415  
+-18.70314392471663  23.4624838639056  6.000017257460777E-5  
+
+
+
+
+    Total energy(joules) is:
+-6.064288840057782E35
+
+    Total momentum(newtons*seconds) is:
+-1.4776563385840512E27  -1.296731456547054E27  4.860375294974091E25  
+
+    Total angular momentum(joules*seconds) is:
+8.227043093105087E41  2.606983678695757E41  3.131372088146431E43  
+
+    The centre of mass has moved(metres) by:
+104580.7287361707
+
+    Result format is:
+    x  y  z
+    Vx  Vy  Vz
+    Results are quoted in KM and KM/S.
+
+5.4400036963432804E7  1.372428573100905E8  29629.698114087245  
+-28.097927121456234  11.09298833905708  7.073624420865104E-4  
+
+
+
+
+    Total energy(joules) is:
+-6.070927729102846E35
+
+    Total momentum(newtons*seconds) is:
+-1.476981083814434E27  -1.298879715830309E27  4.844122342542275E25  
+
+    Total angular momentum(joules*seconds) is:
+8.227042617500918E41  2.6069833952251182E41  3.1313719776137003E43  
+
+    The centre of mass has moved(metres) by:
+105428.09914385289
+
+    Result format is:
+    x  y  z
+    Vx  Vy  Vz
+    Results are quoted in KM and KM/S.
+
+-2.2627087825141843E7  1.4606820055407614E8  30313.274773385405  
+-29.969612900939115  -4.476988850568425  0.0011787264904706198  
+
+
+
+
+    Total energy(joules) has changed by: 
+-9.017579346228358E33
+
+    Total momentum(newtons*seconds) has changed by:
+-1.0453162632760304E25  -1.0536841872715625E25  -2.6944358985607844E21  
+
+    Total angular momentum(joules*seconds) has changed by:
+-5.637978251939544E34  4.369209370182514E34  -4.2650939707582085E36  
+
+    The centre of mass has moved(metres) by:
+33155.41675106397

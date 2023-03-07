@@ -1,0 +1,30 @@
+
+    You used Euler algorithm.
+
+    You used a time step of 1.0E-4 seconds.
+
+    The results after 62.8318531 seconds is:
+
+    Intermediate interval is 6.28318531 seconds.
+
+    Initial energy(joules) is: 
+-5.000000000000001E-10
+
+    Initial momentum(newtons*seconds) is: 
+9.999999999999999E-11  0.0  0.0  
+
+    Initial angular momentum(joules*seconds) is:
+0.0  0.0  -9.999999999999999E-10  
+
+    Initial position(metres) of the centre of mass is:
+0.0  9.999999999999899E-14  0.0  
+-0.2511723406922606%
+-0.5020436472672074%
+-0.7526078832878724%
+-1.0027931314391836%
+-1.2523925780932288%
+-1.5009855184210608%
+-1.747877854880091%
+-1.9921109807001438%
+-2.232601504794598%
+-2.468463158419958%
