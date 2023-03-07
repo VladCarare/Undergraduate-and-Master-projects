@@ -6,7 +6,7 @@ The projects are, in chronological order:
 although its workings a bit described in the PDF therein. I slightly reinvent the wheel by implementing from scratch objects such as complex numbers and 
 methods such as matrix multiplications. Nonetheless, it proved a good exercise. 
  - **Particle accelerator simulation**: this project is built on top of the solar system simulation project but this time including bodies which are accelerated 
-in their rotation by magnetic fields which spatially localised. This endeavour also resulted in an A for the code, although the documentation is not as
+in their rotation by magnetic fields which are spatially localised. This endeavour also resulted in an A for the code, although the documentation is not as
 detailed as in the solar system counterpart. 
 
 
