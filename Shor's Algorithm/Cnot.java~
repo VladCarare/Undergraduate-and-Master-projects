@@ -1,0 +1,612 @@
+import java.util.Scanner;
+import java.lang.Math;
+import java.io.*; //first 2 packages for input/output files
+import java.util.*; 
+import java.util.regex.*;
+import java.util.Scanner;
+/** 
+* Purpose: Simulate a 3-qubit quantum computer: initialisation, CNOT gate and
+* measurement.
+* @author Vlad Carare
+* @version 1.0
+*/ 
+public class Cnot { 
+	
+	
+	public static int dummy=0; //dummy variable;
+	public static int[] dummyVector; //dummy vector introduced so we can
+	// separate first L qubits from the other M qubits in shors algorithm when
+	// we want to print out the result;
+	
+	
+	static double[][] Hadamard1 = new double[8][8];
+	static double[][] Hadamard2 = new double[8][8];
+	static double[][] Hadamard3 = new double[8][8];
+	static double[][] Pi = new double[8][8];
+	static double[][] Oracle = new double[8][8];
+	static double[][] J = new double[8][8];
+	static double[][] C23 = new double[8][8];
+	static double[][] H = new double[2][2];
+	static double[][] Cnot = new double[4][4];
+	
+	
+	static double pi = Math.PI;
+	
+	
+	public static ComplexNumber[][] phaseGate(double angle){
+		ComplexNumber[][] PhaseGate = new ComplexNumber[4][4];
+		for(int i=0 ; i < 4 ; i++)
+			for(int j=0 ; j < 4 ; j++)
+			{
+				if(i==j && i!= 3)	  PhaseGate[i][j] = new ComplexNumber(1,0);
+				else if(i==j && i == 3)  PhaseGate[i][j] = new ComplexNumber(Math.cos(angle),Math.sin(angle));
+				else PhaseGate[i][j] = new ComplexNumber(0,0);
+  	  		}
+  	  		return PhaseGate;  
+	}
+	
+	public static ComplexNumber[][] VGate = new ComplexNumber[4][4];
+	
+	static {
+		for(int i=0 ; i < 4 ; i++){
+			for(int j=0 ; j < 4 ; j++)
+			{
+				if(i < 2 || j < 2){
+					if(i==j) VGate[i][j] = new ComplexNumber(1,0);
+				else VGate[i][j] = new ComplexNumber(0,0);}
+  	  		}
+  	  	}
+  	  	VGate[2][2] = new ComplexNumber(0.5,0.5);
+  	  	VGate[3][3] = new ComplexNumber(0.5,0.5);
+  	  	VGate[3][2] = new ComplexNumber(0.5,-0.5);
+  	  	VGate[2][3] = new ComplexNumber(0.5,-0.5);
+	}
+	
+	public static ComplexNumber[][] InverseVGate = new ComplexNumber[4][4];
+	static {
+		for(int i=0 ; i < 4 ; i++)
+			for(int j=0 ; j < 4 ; j++)
+			{
+				if(i < 2 || j < 2){
+					if(i==j) InverseVGate[i][j] = new ComplexNumber(1,0);
+				else InverseVGate[i][j] = new ComplexNumber(0,0);}
+  	  		}
+  	  		InverseVGate[3][2] = new ComplexNumber(0.5,0.5);
+  	  		InverseVGate[2][3] = new ComplexNumber(0.5,0.5);
+  	  		InverseVGate[3][3] = new ComplexNumber(0.5,-0.5);
+  	  		InverseVGate[2][2] = new ComplexNumber(0.5,-0.5);
+	}
+	
+	static int noOfQubits;
+	static Scanner sc= new Scanner(System.in);
+	static double[] vector;
+	static double[] result;
+	static int size;
+	
+	static File file2 = new File ("Output.txt");
+	static PrintWriter q;
+	
+	
+	
+	
+	/**
+    */   
+    public static void main(String[] args) throws IOException{ 		
+		
+    	
+		/*TO DO: IMPLEMENT COLLAPSE OF WAVEFUNCTION AND MULTIPLICATION SPARSE MATRICES*/
+		
+		Input.read(Hadamard1, Hadamard2, Hadamard3, Pi, Oracle, J, C23, H, Cnot);        
+		
+		//Prints the output into a newly created file Output.txt.	
+		q = new PrintWriter(file2);
+		/*
+		if(file2.exists())
+		{
+		System.out.println("The file already exists" ) ;
+		System.exit(0) ; // quit the program
+		}*/	
+		
+		
+		
+		declare(); // user inputs the number of qubits and program creates a vector
+		// of size 2^n, which has as entries the coeffiecients of each basis vector
+		initialise(); // here user declares coefficients
+		
+		Operation.normalise(vector);
+		
+		double[] counter = new double[size];
+		for(int i = 0; i < 100000; i++)
+		{
+			counter[Operation.measure(vector)]+=1; // measurement collapses vector 
+			// to one of the eigenstates; counter counts how many times the vector collapses
+			// to a given eigenstate
+		}
+		
+		Operation.printVector(counter,q);
+		
+		q.close();
+	}
+	
+		
+	/**
+	* Method does initial declaration of variables, it's a separate method
+	* just so the main method looks clearer;
+	**/
+	static void declare(){
+		System.out.println("Introduce number of qubits:");
+		noOfQubits = sc.nextInt();
+		
+		
+		size=1;
+		for(int i=0; i < noOfQubits; i++)
+			size*=2; // each qubit has 2 computational basis states
+		
+		vector = new double[size];
+		result = new double[size];
+		
+		
+
+	}
+	
+	/**
+	**/
+	static void initialise()
+	{
+		
+
+		System.out.println("  For "+noOfQubits+" qubits there are "+size+" computational basis states whose");
+		System.out.println(" coefficients are represented by entries in a vector of size " + size);
+		
+		
+		for(int i=0; i < size; i++) // user introduces the desired amplitudes
+		{
+			System.out.println("Component "+i);
+			vector[i] = sc.nextDouble();
+		}
+		
+		for(int i=0; i < size; i++)
+		{
+			result[i]=vector[i];
+		}
+		
+	}
+	
+	
+	
+	
+	
+	/**
+	* REMEMBER THAT GATE AND QUBIT NOTATION STARTS FROM 0
+	* I.E GATE ACTING ON FIRST QUBIT IS GATE[O]
+	**/
+	static void chooseGrover()
+	{
+		
+
+		
+		int optimalNoOfAttemps = (int) Math.round((3.1416 * Math.sqrt(size))/4.0);
+		System.out.println("The optimal number of iterations is: " + optimalNoOfAttemps);
+		
+		
+		
+		// We first initialise an array composed of real numbers, as for the
+		// CNOT gate complex numbers are not needed;
+		
+		System.out.println("Target (1 <= x <= "+size+"): ");
+		int target = sc.nextInt();
+		
+		double[][] gate[] = new double[size][size][noOfQubits]; 
+		double[][] O = Operation.createO(q, noOfQubits, target);
+		double[][] Jey = Operation.createJ(q, noOfQubits);
+		
+		
+		for(int i=0; i<noOfQubits; i++)
+			gate[i]=Operation.createHadamard(H, q, noOfQubits, i);
+		
+		
+		for(int i=0; i < noOfQubits; i++)
+			result = Operation.multiply(gate[i],result);
+		
+		System.out.println("Number of repetitions for Grover's Algorithm: ");
+		int noOfRepetitions = sc.nextInt();
+		
+		for(int i=0; i < noOfRepetitions; i++)
+			result = Operation.applyGrover2(result, gate, O, Jey);
+		
+		
+		Operation.normalise(result);
+		
+		
+		Operation.measure(result,q);
+		
+	}
+	
+	
+	
+	/**
+	* REMEMBER THAT GATE AND QUBIT NOTATION STARTS FROM 0
+	* I.E GATE ACTING ON FIRST QUBIT IS GATE[O]
+	**/
+	static void createCnot()
+	{
+		
+		System.out.println("Control qubit:");
+		int control = sc.nextInt();
+		System.out.println("Target qubit:");
+		int target = sc.nextInt();
+		
+		Operation.createCnot(Cnot, q, noOfQubits, control, target);
+		
+	}
+	
+	
+	
+	
+	
+	static void sparseMatrix(){
+		
+		
+		/*
+		//double[][] matrix1 = new double[3][3];
+		SparseMatrix matrix2 = new SparseMatrix(J);
+		for(int i=0; i < 8; i++)
+		System.out.println(matrix2.sparseMatrix[i][0]);
+		for(int i=0; i < 8; i++)
+		System.out.println(matrix2.columnIndexMatrix[i][0]);
+		
+		Operation.printMatrix(matrix2.sparseMatrix,q);
+		*/
+		
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	/**
+	* REMEMBER THAT GATE AND QUBIT NOTATION STARTS FROM 0
+	* I.E GATE ACTING ON FIRST QUBIT IS GATE[O]
+	**/
+	static void chooseShors()
+	{
+
+		ComplexNumber[] complexResult = new ComplexNumber[size];
+		for(int i=0; i < size; i++) complexResult[i] = new ComplexNumber();
+		
+		
+		int a;
+		//initialises register in the state 0000.....00001 as required
+		vector[1]=1;
+		result[1]=1;
+		
+		int noToFactorise = 15;
+		
+		System.out.println("The N qubit register can be split into two subregisters (x-register and");
+		System.out.println(" f-register of length L and M respectively such that M+L=N");
+		System.out.println("L: ");
+		int L = sc.nextInt();
+		int M = noOfQubits - L;
+		System.out.println("M is therefore " + M);
+		
+		
+		//checking that greatest common denominator of (a,C)=1 as required by algorithm;
+		do{
+			// Following the prescription
+			System.out.println("Pick 'a' in the range 1 < a < "+noToFactorise);
+			System.out.println("such that gcd(a,"+noToFactorise+")=1");
+		a = sc.nextInt();}
+		while(Operation.GCD(a,noToFactorise)!=1) ;
+		
+		
+		//the gate  controlled  by  bit l_k conditionally  multiplies  the
+		//f-register by a^(2^l_k)(mod 15). Together the three gates multiply
+		//the f-register by a^(l_0 + 2*l_1 + 4*l_2)(mod 15) = a^x (mod15) = f(x)
+		//as required for step 2 of the period-finding calculation.
+		int[] A = new int[L];
+		for( int i=0; i < L; i++){
+		A[i] = (int) Math.pow(a,Math.pow(2,i)) % noToFactorise;}
+		
+		
+		
+		// Hadarmard gates are needed just for the x-register qubits
+		double[][] Hadamard[] = new double[size][size][L]; 
+		for(int i=0; i < L; i++)
+			Hadamard[i]=Operation.createHadamard(H, q, noOfQubits, i);
+		
+		//Create superposition in x-register
+		for(int i=0; i < L; i++)
+			result = Operation.multiply(Hadamard[i],result);
+		
+		
+		/*ComplexNumber[] complexResult = new ComplexNumber[size];
+		for(int i=0; i < size; i++) complexResult[i] = new ComplexNumber(result[i],0);
+		for(int i=0; i < L; i++)
+		complexResult = Operation.complexMultiply(Hadamard[i],vector);
+		
+		for(int i=0; i < size; i++)
+		complexResult[i].print();
+	    Operation.printVector(result);*/
+		
+		
+		// create function gates controlled by each of the x-register qubits
+		double[][] shorsFunctionGate[] = new double[size][size][L];
+		for(int i=0; i < L; i++)
+			shorsFunctionGate[i] = Operation.createShorsFunctionGate(q, noOfQubits, i, L, noToFactorise, A[i]);
+		
+		
+		double[][] compositionOfFunctionGate = new double[size][size];
+		compositionOfFunctionGate = shorsFunctionGate[0];
+		for(int i=1; i < L; i++) compositionOfFunctionGate = Operation.multiply(compositionOfFunctionGate,shorsFunctionGate[i]);
+		
+		
+		// a test for the function gates
+		for(int i=0; i < L; i++)
+		for(int k=0; k < size; k++){
+			int sum=0;
+			for(int l=0; l < size; l++)
+				sum+=(int) shorsFunctionGate[i][k][l];
+			if(sum!=1){
+				System.out.println("Row " + k + " of function gate "+i+" has a sum different from 1. ISSUE");
+				break;
+			}
+		}
+		
+		
+		
+		for(int i=0; i < L; i++)
+			result = Operation.multiply(shorsFunctionGate[i],result);
+		
+		
+		/*
+		double[] fRegister = new double[size-];
+		// measure the f-register so we collapse the wave function
+		for(int i = 0; i < noOfQubits - L ; i++)
+		
+		
+		Operation.normalise(fRegister);
+		Operation.measure(fRegister,q); */
+		
+		ComplexNumber[][] phaseGate = new ComplexNumber[size][size];
+		for(int i=0; i < size; i++)
+			for(int j=0; j < size; j++) phaseGate[i][j] = new ComplexNumber();
+		
+		
+		for(int i=0; i < size; i++) complexResult[i] = new ComplexNumber(result[i],0);		
+		
+		
+		
+		for(int i = 0 ; i < L ; i++)
+		{
+			complexResult = Operation.complexMultiply(Hadamard[i],complexResult);
+			for(int j = (i+1) ; j < L ; j++){
+				phaseGate = Operation.createPhaseGate(phaseGate(pi/(2.*(j-i))), q, noOfQubits, i, j);
+				// where i is the control qubit and j is the target qubit
+				complexResult = Operation.complexMultiply(phaseGate, complexResult);
+			}
+		}
+		
+		
+		
+		
+		
+		Operation.normalise(complexResult);
+		//System.out.println(1+"th component: " + complexResult[100].real() + "+ i" + complexResult[100].imaginary());
+		
+		
+		
+		
+		//dummy vector introduced so we can
+		// separate first L qubits from the other M qubits in shors algorithm when
+		// we want to print out the result;
+		int[] dummyVector = new int[noOfQubits];
+		
+		
+		Operation.iUsedShorsAlgorithm();
+		Operation.measure(complexResult,q); 
+		
+		
+		
+		dummyVector = Operation.convertToBinary(dummy);
+		int function=0;
+		int x=0;
+		int xTilda=0;
+		
+        for(int i=0; i < 7 ; i++ )System.out.println(dummyVector[i]);
+		
+		
+		for(int i=0; i < noOfQubits - L; i++) function+=dummyVector[i]*Math.pow(2.,i);
+		for(int i= noOfQubits - L; i < noOfQubits; i++) x+=dummyVector[i]*Math.pow(2.,i - (noOfQubits - L));
+		
+		System.out.println("x is: " + x + " and f(x) is: " + function + " but keep in mind that");
+		System.out.println(" this does not apply when the IQFT has taken place");
+		
+		
+		for(int i= noOfQubits - 1 ; i >= noOfQubits - L; i--) xTilda+=dummyVector[i]*Math.pow(2.,(noOfQubits - 1) - i);
+		System.out.println("Shor proved that the measured xTilda/2^L = s/p, where s is an unknown  integer");
+		System.out.println("and p is the period we're looking for");
+		System.out.println("xTilda/2^L = " + (xTilda/Math.pow(2.,L)));
+		
+		
+		q.println("Composition of function gates is: ");
+		Operation.printMatrix(compositionOfFunctionGate, q);
+		
+		
+		q.close();
+	}
+	
+	/**
+	* REMEMBER THAT GATE AND QUBIT NOTATION STARTS FROM 0
+	* I.E GATE ACTING ON FIRST QUBIT IS GATE[O]
+	**/
+	static void chooseShorsExplicitFunctionGate()
+	{
+		vector = new double[size];
+		result = new double[size];
+		ComplexNumber[] complexResult = new ComplexNumber[size];
+		for(int i=0; i < size; i++) complexResult[i] = new ComplexNumber();
+		
+		
+		int a;
+		//initialises register in the state 0000.....00001 as required
+		vector[1]=1;
+		result[1]=1;
+		
+		int noToFactorise = 15;
+		
+		System.out.println("The N qubit register can be split into two subregisters (x-register and");
+		System.out.println(" f-register of length L and M respectively such that M+L=N");
+		System.out.println("L: ");
+		int L = sc.nextInt();
+		int M = noOfQubits - L;
+		System.out.println("M is therefore " + M);
+		
+		
+		//checking that greatest common denominator of (a,C)=1 as required by algorithm;
+		do{
+			// Following the prescription
+			System.out.println("Pick 'a' in the range 1 < a < "+noToFactorise);
+			System.out.println("such that gcd(a,"+noToFactorise+")=1");
+		a = sc.nextInt();}
+		while(Operation.GCD(a,noToFactorise)!=1) ;
+		
+		
+		//the gate  controlled  by  bit l_k conditionally  multiplies  the
+		//f-register by a^(2^l_k)(mod 15). Together the three gates multiply
+		//the f-register by a^(l_0 + 2*l_1 + 4*l_2)(mod 15) = a^x (mod15) = f(x)
+		//as required for step 2 of the period-finding calculation.
+		int[] A = new int[L];
+		for( int i=0; i < L; i++){
+		A[i] = (int) Math.pow(a,Math.pow(2,i)) % noToFactorise;}
+		
+		
+		
+		// Hadarmard gates are needed just for the x-register qubits
+		double[][] Hadamard[] = new double[size][size][L]; 
+		for(int i=0; i < L; i++)
+			Hadamard[i]=Operation.createHadamard(H, q, noOfQubits, i);
+		
+		//Create superposition in x-register
+		for(int i=0; i < L; i++)
+		{
+			result = Operation.multiply(Hadamard[i],result);
+			q.println("Hadamard gate acting on qubit " + (i+1));
+
+		}
+		
+		/*ComplexNumber[] complexResult = new ComplexNumber[size];
+		for(int i=0; i < size; i++) complexResult[i] = new ComplexNumber(result[i],0);
+		for(int i=0; i < L; i++)
+		complexResult = Operation.complexMultiply(Hadamard[i],vector);
+		
+		for(int i=0; i < size; i++)
+		complexResult[i].print();
+	    Operation.printVector(result);*/
+	    
+	    
+	    ComplexNumber[][] phaseGate = new ComplexNumber[size][size];
+		for(int i=0; i < size; i++)
+			for(int j=0; j < size; j++) phaseGate[i][j] = new ComplexNumber();
+		
+		
+		
+		for(int i=0; i < size; i++) complexResult[i] = new ComplexNumber(result[i],0);		
+		
+		
+		
+		complexResult = Operation.complexMultiply(Operation.createCnot(Cnot, q, noOfQubits, 2, 4),complexResult);
+		
+		complexResult = Operation.complexMultiply(Operation.createCnot(Cnot, q, noOfQubits, 2, 5),complexResult);
+		
+		complexResult = Operation.complexMultiply(Operation.createCnot(Cnot, q, noOfQubits, 3, 5),complexResult);
+		
+		complexResult = Operation.complexMultiply(Operation.createVGate(VGate, q, noOfQubits, 5, 3),complexResult);
+		
+		complexResult = Operation.complexMultiply(Operation.createCnot(Cnot, q, noOfQubits, 1, 5),complexResult);
+		
+		complexResult = Operation.complexMultiply(Operation.createVGate(InverseVGate, q, noOfQubits, 5, 3),complexResult);
+		
+		complexResult = Operation.complexMultiply(Operation.createCnot(Cnot, q, noOfQubits, 1, 5),complexResult);
+		
+		complexResult = Operation.complexMultiply(Operation.createVGate(VGate, q, noOfQubits, 1, 3),complexResult);
+		
+		complexResult = Operation.complexMultiply(Operation.createCnot(Cnot, q, noOfQubits, 3, 5),complexResult);
+		
+		complexResult = Operation.complexMultiply(Operation.createCnot(Cnot, q, noOfQubits, 6, 4),complexResult);
+		
+		complexResult = Operation.complexMultiply(Operation.createVGate(VGate, q, noOfQubits, 4, 6),complexResult);
+		
+		complexResult = Operation.complexMultiply(Operation.createCnot(Cnot, q, noOfQubits, 1, 4),complexResult);
+		
+		complexResult = Operation.complexMultiply(Operation.createVGate(InverseVGate, q, noOfQubits, 4, 6),complexResult);
+		
+		complexResult = Operation.complexMultiply(Operation.createCnot(Cnot, q, noOfQubits, 1, 4),complexResult);
+		
+		complexResult = Operation.complexMultiply(Operation.createVGate(VGate, q, noOfQubits, 1, 6),complexResult);
+		
+		complexResult = Operation.complexMultiply(Operation.createCnot(Cnot, q, noOfQubits, 6, 4),complexResult);
+		
+		
+		for(int i = 0 ; i < L ; i++)
+		{
+			complexResult = Operation.complexMultiply(Hadamard[i],complexResult);
+		q.println("Hadamard gate acting on qubit " + (i+1));
+			for(int j = (i+1) ; j < L ; j++){
+				phaseGate = Operation.createPhaseGate(phaseGate(pi/(2.*(j-i))), q, noOfQubits, i, j);
+				// where i is the control qubit and j is the target qubit
+				complexResult = Operation.complexMultiply(phaseGate, complexResult);
+
+			}
+		}
+		
+		
+		
+		
+		
+		Operation.normalise(complexResult);
+		//System.out.println(1+"th component: " + complexResult[100].real() + "+ i" + complexResult[100].imaginary());
+		
+		
+		
+		
+		//dummy vector introduced so we can
+		// separate first L qubits from the other M qubits in shors algorithm when
+		// we want to print out the result;
+		int[] dummyVector = new int[noOfQubits];
+		
+		
+		Operation.iUsedShorsAlgorithm();
+		Operation.measure(complexResult,q); 
+		
+		
+		
+		dummyVector = Operation.convertToBinary(dummy);
+		int function=0;
+		int x=0;
+		int xTilda=0;
+		
+        for(int i=0; i < 7 ; i++ )System.out.println(dummyVector[i]);
+		
+		
+		for(int i=0; i < noOfQubits - L; i++) function+=dummyVector[i]*Math.pow(2.,i);
+		for(int i= noOfQubits - L; i < noOfQubits; i++) x+=dummyVector[i]*Math.pow(2.,i - (noOfQubits - L));
+		
+		System.out.println("x is: " + x + " and f(x) is: " + function + " but keep in mind that");
+		System.out.println(" this does not apply when the IQFT has taken place");
+		
+		
+		for(int i= noOfQubits - 1 ; i >= noOfQubits - L; i--) xTilda+=dummyVector[i]*Math.pow(2.,(noOfQubits - 1) - i);
+		System.out.println("Shor proved that the measured xTilda/2^L = s/p, where s is an unknown  integer");
+		System.out.println("and p is the period we're looking for");
+		System.out.println("xTilda/2^L = " + (xTilda/Math.pow(2.,L)));
+		
+		
+		
+		q.close();
+	}
+}
+

@@ -1,0 +1,28 @@
+Target is: 6
+Target is: 5
+Target is: 4
+Hadamard gate acting on qubit 1
+Hadamard gate acting on qubit 2
+Hadamard gate acting on qubit 3
+CNOT gate controlled by qubit 3 acting on qubit 5
+CNOT gate controlled by qubit 3 acting on qubit 6
+CNOT gate controlled by qubit 4 acting on qubit 6
+V gate controlled by qubit 6 acting on qubit 4
+CNOT gate controlled by qubit 2 acting on qubit 6
+Inverse V gate controlled by qubit 6 acting on qubit 4
+CNOT gate controlled by qubit 2 acting on qubit 6
+V gate controlled by qubit 2 acting on qubit 4
+CNOT gate controlled by qubit 4 acting on qubit 6
+CNOT gate controlled by qubit 7 acting on qubit 5
+V gate controlled by qubit 5 acting on qubit 7
+CNOT gate controlled by qubit 2 acting on qubit 5
+Inverse V gate controlled by qubit 5 acting on qubit 7
+CNOT gate controlled by qubit 2 acting on qubit 5
+V gate controlled by qubit 2 acting on qubit 7
+CNOT gate controlled by qubit 7 acting on qubit 5
+Hadamard gate acting on qubit 1
+Phase gate PI/2 controlled by qubit 1 acting on qubit 2
+Phase gate PI/4 controlled by qubit 1 acting on qubit 3
+Hadamard gate acting on qubit 2
+Phase gate PI/2 controlled by qubit 2 acting on qubit 3
+Hadamard gate acting on qubit 3

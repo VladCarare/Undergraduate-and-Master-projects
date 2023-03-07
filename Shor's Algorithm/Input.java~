@@ -1,0 +1,118 @@
+/**
+*  Class reads the input from a previously created file.
+*  The file contains information about the first 17 most massive
+*  astronomical objects in our solar system.
+*
+*  In our case the file has data from JPL HORIZON for the
+*  position and velocity of celestial bodies in the solar system
+*  on 5-dec-1996.
+**/
+import java.io.*;
+import java.util.*; 
+import java.util.Scanner;
+
+public class Input      
+{
+	/**
+	*  The method loops over the file in order to
+	*  transfer the information to the Particle Constructor
+	*  which takes a name, a position, a velocity and a mass.
+	*  @param solarSystem the array of the celestial bodies
+	*  @param gravField the array of each body's gravitational attraction to other bodies
+	**/
+	public static void read(double[][] Hadamard1, double[][] Hadamard2, double[][] Hadamard3, double[][] Pi, double[][] Oracle, double[][] J, double[][] C23)
+	{
+		int n = Hadamard1.length;
+		File file = null;
+		file = new File("InputFile.txt");
+		Scanner scanner = null; 
+		try {  // Create a scanner to read the file
+			scanner = new Scanner (file);
+		}
+		catch (FileNotFoundException e){
+			System.out.println ("File not found!");
+			// Stop program if no file found
+			System.exit (0);
+		}
+		// try reading the file
+		// and throw an exception if it fails
+		try {
+			// check that there is a next entry of any type
+			// and stops at the chosen number of astronomical objects
+			int counter=0;
+			while (scanner.hasNext())
+			{
+				
+				for(int i=0; i < n; i++)
+				{
+					for(int j=0; j < n; j++)
+					{  
+						Hadamard1[i][j] = scanner.nextDouble();
+						counter+=1; 
+					}
+				}
+				
+				for(int i=0; i < n; i++)
+				{
+					for(int j=0; j < n; j++)
+					{  
+						Hadamard2[i][j] = scanner.nextDouble();
+						counter+=1; 
+					}
+				}
+				
+				for(int i=0; i < n; i++)
+				{
+					for(int j=0; j < n; j++)
+					{  
+						Hadamard3[i][j] = scanner.nextDouble();
+						counter+=1; 
+					}
+				}
+				
+				for(int i=0; i < n; i++)
+				{
+					for(int j=0; j < n; j++)
+					{  
+						Pi[i][j] = scanner.nextDouble();
+						counter+=1; 
+					}
+				}				
+				for(int i=0; i < n; i++)
+				{
+					for(int j=0; j < n; j++)
+					{  
+						Oracle[i][j] = scanner.nextDouble();
+						counter+=1; 
+					}
+				}				
+				for(int i=0; i < n; i++)
+				{
+					for(int j=0; j < n; j++)
+					{  
+						J[i][j] = scanner.nextDouble();
+						counter+=1; 
+					}
+				}				
+				for(int i=0; i < n; i++)
+				{
+					for(int j=0; j < n; j++)
+					{  
+						C23[i][j] = scanner.nextDouble();
+						counter+=1; 
+					}
+				}
+				//if statement prevents an error from occuring
+				// in the case when the chosen number of bodies is less
+				// than the total number that the input file contains
+				// and thus there is information left in the file.
+				
+				//if(counter == Hadamard.length) break;
+			}
+		}
+		// catch the type miss match exception if it exists
+		catch (InputMismatchException e) {
+			System.out.println ("Mismatch exception:" + e );
+		}
+	}
+}
